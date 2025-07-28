@@ -1,0 +1,392 @@
+body {
+    font-family: "Roboto", serif;
+    background-color: #f4f7fc;
+}
+
+.navbar {
+    background-color: #af8eff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-sidebar {
+    color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s ease;
+    z-index: 999;
+    background: #fff;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.main-sidebar .brand-link {
+    text-align: center;
+    font-weight: 800;
+    color: #222222;
+    font-size: 26px;
+}
+
+.main-sidebar .nav-item {
+    font-size: 1rem;
+    padding: 3px;
+}
+
+.main-sidebar .nav-link {
+    color: #434343;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 12px;
+    padding: 5px;
+    font-weight: 600;
+
+}
+
+/* Sidebar and Main Content */
+.main-sidebar {
+    width: 250px;
+    /* Adjust sidebar width */
+    transition: transform 0.3s ease;
+}
+
+.main-content {
+    transition: margin-left 0.3s ease;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .main-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        /* Hidden by default */
+        z-index: 1050;
+        /* Ensure above other elements */
+    }
+
+    .main-sidebar.open {
+        transform: translateX(0);
+        /* Slide-in effect */
+    }
+
+    .main-content.open {
+        margin-left: 250px;
+        /* Adjust main content for visible sidebar */
+    }
+}
+
+
+.main-sidebar {
+    transition: all 0.3s ease;
+}
+
+.main-content {
+    transition: margin-left 0.3s ease;
+}
+
+.main-sidebar.open {
+    display: block !important;
+}
+
+.main-content.open {
+    margin-left: 250px;
+    /* Adjust based on sidebar width */
+}
+
+
+.main-sidebar .nav-link:hover {
+    color: white;
+}
+
+.bg-nav {
+    background-color: #d5e0ff;
+}
+
+.main-sidebar .nav-link:hover i {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.main-sidebar .nav-link.active {
+    color: #000;
+    background-color: #bda3fb;
+    border-left: 4px solid #6d25f7;
+}
+
+.main-sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-left: 250px;
+    flex-grow: 1;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+}
+
+
+/* Visible state */
+.main-sidebar.open {
+    transform: translateX(0);
+    /* Slide in */
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+    .main-sidebar {
+        transform: translateX(0);
+        /* Always visible */
+    }
+}
+
+/* Sidebar toggle for smaller screens */
+@media (max-width: 768px) {
+    .main-sidebar {
+        position: fixed;
+        left: -250px;
+        transition: 0.3s ease;
+    }
+
+    .main-sidebar.open {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content.open {
+        margin-left: 250px;
+    }
+}
+
+/* Layout for smaller screens */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+}
+
+/* Enhanced Breadcrumb Styling for ERP-like Appearance */
+.breadcrumb-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.breadcrumb-item a {
+    color: #875dff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: '›';
+    color: #6c757d;
+    margin: 0 10px;
+}
+
+label {
+    font-size: 12px;
+    color: #727272;
+    font-weight: 500;
+
+}
+
+.form-control {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.table th,td{
+    white-space: nowrap !important;
+    font-size: 12px;
+    text-align: start;
+    color: #636363;
+    font-weight: 600;
+}
+
+table>thead>tr>th,
+table>thead>tr>td {
+    font-size: 12px;
+}
+
+table th.dt-type-numeric,
+table th.dt-type-date,
+table td.dt-type-numeric,
+table td {
+    text-align: left;
+}
+
+label {
+    font-size: 12px;
+    color: #727272;
+    font-weight: 500;
+
+}
+
+.form-control {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+.badge-success {
+    background-color: #7fff9d;
+    color: black;
+}
+
+.badge-warning {
+    background-color: #ffdc72;
+    /* Bootstrap's warning color */
+    color: black;
+}
+
+.badge-danger {
+    background-color: #ff7f8c;
+    /* Bootstrap's danger color */
+    color: white;
+}
+
+.sidebar {
+    background-color: #343a40;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.sidebar .brand-link {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.sidebar .brand-link:hover {
+    background-color: #0056b3;
+}
+
+.sidebar .nav-pills {
+    padding-left: 0;
+}
+
+.nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-link {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-link .nav-icon {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
+    background-color: #495057;
+    color: #007bff;
+}
+
+.nav-link.active {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed .nav-link {
+    justify-content: center;
+}
+
+.sidebar.collapsed .brand-link {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.forgot-password {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 255 255 / 57%);
+    /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    /* Ensure it appears on top of the table */
+    text-align: center;
+}
+
+.card{
+    border: none!important;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__rendered,.form-select,.btn {
+    font-size: 12px;
+    font-weight: 500;
+}
